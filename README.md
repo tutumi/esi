@@ -24,3 +24,6 @@ Sergio Henrique Tutumi - 7693813
 
 ## Projeto
 
+Muitos alunos não serão capazes de finalizar o curso dentro do tempo máximo para sua conclusão, seja pela cadeia de requisitos que ainda precisam ser cursados ou pela quantidade de créditos pendentes.
+
+Visando auxiliar o estudante a acompanhar sua real situação acadêmica, este software permitirá que ele saiba se irá jubilar ou se ainda é possível se formar.
