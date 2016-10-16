@@ -35,7 +35,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   #RSpec
   gem 'rspec-rails'
-
+  gem 'rb-readline'
+  gem 'guard-rspec'
 end
 
 group :development do
