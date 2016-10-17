@@ -37,6 +37,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rb-readline'
   gem 'guard-rspec'
+  # assigns has been extracted to a gem. To continue using it,
+  # add `gem 'rails-controller-testing'` to your Gemfile.
+  gem 'rails-controller-testing'
 end
 
 group :development do
