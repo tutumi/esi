@@ -1,0 +1,961 @@
+{
+   "nome":"Bacharelado em Sistemas de Informação",
+   "duracao":{
+      "ideal":"8",
+      "min":"8",
+      "max":"12"
+   },
+   "carga_horaria":{
+      "obrigatoria":{
+         "aula":"1830",
+         "trabalho":"1020"
+      },
+      "optativa_livre":{
+         "aula":"0",
+         "trabalho":"0"
+      },
+      "optativa_eletiva":{
+         "aula":"390",
+         "trabalho":"0"
+      },
+      "estagio":"360"
+   },
+   "disciplinas":{
+      "1":[
+         {
+            "codigo":"ACH0021",
+            "nome":"Tratamento e Análise de Dados/ Informações",
+            "obrigatoria":true,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0041",
+            "nome":"Resolução de Problemas I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2001",
+            "nome":"Introdução à Programação",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2011",
+            "nome":"Cálculo I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2014",
+            "nome":"Fundamentos de Sistemas de Informação",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2002",
+            "nome":"Introdução à Análise de Algoritmos",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2001"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2012",
+            "nome":"Cálculo II",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fortes":[
+                  "ACH2011"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2013",
+            "nome":"Matemática Discreta I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2023",
+            "nome":"Algoritmos e Estruturas de Dados I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2001"
+               ],
+               "conjunto":[
+                  "ACH2002"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2033",
+            "nome":"Matrizes, Vetores e Geometria Analítica",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2011"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2003",
+            "nome":"Computação Orientada a Objetos",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2002"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2024",
+            "nome":"Algoritmos e Estruturas de Dados II",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2023"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2034",
+            "nome":"Organização de Computadores Digitais",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2035",
+            "nome":"Introdução à Administração para Computação",
+            "obrigatoria":true,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2053",
+            "nome":"Introdução à Estatística",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH0021",
+                  "ACH2012"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2004",
+            "nome":"Bancos de Dados",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2003"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2036",
+            "nome":"Métodos Quantitativos Aplicados à Administração de Empresas I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2053"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2043",
+            "nome":"Introdução à Teoria da Computação",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2013"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2044",
+            "nome":"Sistemas Operacionais",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2002",
+                  "ACH2034"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2055",
+            "nome":"Arquitetura de Computadores",
+            "obrigatoria":true,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+               "fracos":[
+                  "ACH2034"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2005",
+            "nome":"Análise, Projeto e Interface Humano-Computador",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2003"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2016",
+            "nome":"Inteligência Artificial",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2025",
+            "nome":"Laboratório de Bancos de Dados",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2004"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2047",
+            "nome":"Economia para Computação",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2011"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH0042",
+            "nome":"Resolução de Problemas II",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2003"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2006",
+            "nome":"Engenharia de Sistemas de Informação I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2005"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2026",
+            "nome":"Redes de Computadores",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2044",
+                  "ACH2055"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2027",
+            "nome":"Prática e Gerenciamento de Projetos",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2005",
+                  "ACH2035"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2017",
+            "nome":"Projeto Supervisionado ou de Graduação I",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"6",
+            "carga_hr":"240",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2147",
+            "nome":"Desenvolvimento de Sistemas de Informação Distribuídos",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2006",
+                  "ACH2025"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2008",
+            "nome":"Empreendedorismo em Informática",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2006"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2018",
+            "nome":"Projeto Supervisionado ou de Graduação II",
+            "obrigatoria":true,
+            "cred_aula":"4",
+            "cred_trab":"6",
+            "carga_hr":"240",
+            "requisitos":{
+               "fracos":[
+                  "ACH2017"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH0141",
+            "nome":"Sociedade, Multiculturalismo e Direitos � Estado e Sociedade",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0151",
+            "nome":"Sociedade, Multiculturalismo e Direitos - Cultura Digital",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0161",
+            "nome":"Sociedade, Multiculturalismo e Direitos � Direitos Humanos e Multiculturalismo",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0101",
+            "nome":"Ciências da Natureza � Ciências da Terra",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0111",
+            "nome":"Ciências da Natureza - Ciências da Vida",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0121",
+            "nome":"Ciências da Natureza - Ciências do Universo",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0131",
+            "nome":"Ciências da Natureza - Ciência, Cultura e Sociedade",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0142",
+            "nome":"Sociedade, Meio Ambiente e Cidadania � Desenvolvimento e Meio Ambiente",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0152",
+            "nome":"Sociedade, Meio Ambiente e Cidadania - Sociedade, Ambiente e Cidadania",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2015",
+            "nome":"Contabilidade para Computação",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0102",
+            "nome":"Psicologia, Educação e Temas Contemporâneos",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0112",
+            "nome":"Psicologia, Educação e Temas Contemporâneos - Uma Visão Psicanalítica",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0122",
+            "nome":"Psicologia, Educação e Temas Contemporâneos � Processos Sociais de Formação dos Indivíduos",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0132",
+            "nome":"Psicologia, Educação e Temas Contemporâneos - Uma Abordagem Crítica",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0162",
+            "nome":"Arte, Literatura e Cultura",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0172",
+            "nome":"Arte, Literatura e Cultura - Arte Contemporânea",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0182",
+            "nome":"Arte, Literatura e Cultura � Fantasia e Ficção Científica na Cultura Pop",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH0192",
+            "nome":"Arte, Literatura e Cultura - Literatura Contemporânea",
+            "obrigatoria":false,
+            "cred_aula":"2",
+            "cred_trab":"0",
+            "carga_hr":"30",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2096",
+            "nome":"Laboratório de Sistemas Operacionais",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024",
+                  "ACH2044"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2106",
+            "nome":"Projeto Integrado de Sistemas de Informação",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2003",
+                  "ACH2005"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2007",
+            "nome":"Engenharia de Sistemas de Informação II",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2006"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2066",
+            "nome":"Tópicos Especiais em Bancos de Dados",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2025"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2067",
+            "nome":"Gestão de Processos de Negócio",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2014",
+                  "ACH2027"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2076",
+            "nome":"Segurança da Informação",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2026"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2077",
+            "nome":"Soluções Web Baseadas em Software Livre",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2087",
+            "nome":"Construção de Compiladores",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024",
+                  "ACH2043"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2107",
+            "nome":"Desafios de Programação I",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2023"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2117",
+            "nome":"Computação Gráfica",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2127",
+            "nome":"Governança de Tecnologia da Informação",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2014",
+                  "ACH2027"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2137",
+            "nome":"Tópicos em Planejamento em Inteligência Artificial",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2016"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2157",
+            "nome":"Computação Física e Aplicações",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2028",
+            "nome":"Qualidade de Software",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2005",
+                  "ACH2006"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2037",
+            "nome":"Métodos Quantitativos Aplicados à Sistemas de Informação",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2036"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2038",
+            "nome":"Laboratório de Redes de Computadores",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2026"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2048",
+            "nome":"Redes de Alto Desempenho",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"1",
+            "carga_hr":"90",
+            "requisitos":{
+               "fracos":[
+                  "ACH2026"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2068",
+            "nome":"Avaliação de Desempenho de Sistemas Computacionais",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2005",
+                  "ACH2006"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2078",
+            "nome":"Gestão Empresarial",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+
+            }
+         },
+         {
+            "codigo":"ACH2086",
+            "nome":"Hipermídia",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2005"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2098",
+            "nome":"Web Semântica",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2004",
+                  "ACH2013"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2108",
+            "nome":"Desafios de Programação II",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2118",
+            "nome":"Introdução ao Processamento de Língua Natural",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2016"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2128",
+            "nome":"Introdução às Redes Complexas",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"0",
+            "carga_hr":"60",
+            "requisitos":{
+               "fracos":[
+                  "ACH2024",
+                  "ACH2033",
+                  "ACH2053"
+               ]
+            }
+         },
+         {
+            "codigo":"ACH2138",
+            "nome":"Modelagem e Simulação de Sistemas Complexos",
+            "obrigatoria":false,
+            "cred_aula":"4",
+            "cred_trab":"2",
+            "carga_hr":"120",
+            "requisitos":{
+               "fracos":[
+                  "ACH2012",
+                  "ACH2024"
+               ]
+            }
+         }
+      ]
+   }
+}
