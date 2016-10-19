@@ -1,3 +1,7 @@
 language: ruby
+before_install:
+  - psql -c "create database esi_test;" -U postgres
 rvm:
   - 2.3.0
+services:
+  - postgresql
