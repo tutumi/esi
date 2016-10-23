@@ -15,6 +15,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
+  test "nusp should be present" do
+    @user.nusp = ""
+    assert_not @user.valid?
+  end
+  
   test "nusp should be smaller" do
     @user.nusp = "123456479569954956"
     assert_not @user.valid?
