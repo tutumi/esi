@@ -5,7 +5,9 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, velit ipsam repellendus quaerat rerum fugit laudantium dicta aperiam blanditiis minus ut ducimus ipsa voluptates earum distinctio quod possimus qui natus.
   </h2>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+  
+  <%= link_to "Sign In", { controller: "sessions", action: "new" }, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now!", { controller: "users", action: "new" }, class: "btn btn-lg btn-primary" %>
 </div>
 
 <!--<%= link_to image_tag("rails.png", alt: "Rails logo"),
