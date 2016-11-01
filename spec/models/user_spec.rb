@@ -2,8 +2,19 @@ require 'rails_helper'
 require 'spec_helper'
  
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+    #pending "add some examples to (or delete) #{__FILE__}"
+    it "should destroy the user" do
+      #@user = User.create(name: "Michel Inacio Roussef", email: "email@liame.com", nusp: "8516666")
+      #@user.destroy(name: "Michel Inacio Roussef", email: "email@liame.com", nusp: "8516666")
+      #@user.destroy
+      #@user.delete
+      #expect(@user).not_to be_valid
+    end
 end
+
+#describe "adding or delleting test" do
+ 
+#end
 
 describe "validation tests" do
     before :all do
