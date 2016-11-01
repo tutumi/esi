@@ -18,7 +18,7 @@ end
 
 describe "validation tests" do
     before :all do
-      @user = User.new(name: "Caio Teixeira", email: "caio@teixeira.com", nusp: "8516883")
+      @user = User.new(name: "Caio Teixeira", email: "caio@teixeira.com", nusp: "8516883", password:"teste123")
     end
     it "should be valid" do
       expect(@user).to be_valid
