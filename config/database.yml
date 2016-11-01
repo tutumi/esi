@@ -1,9 +1,9 @@
 default: &default
   adapter: postgresql
-  encoding: SQL_ASCII
+  encoding: utf8
   database: esi_development
   pool: 5
-  username: ubuntu
+  username: postgres
   password:
 
 development:
@@ -13,8 +13,8 @@ development:
 test: &test
   adapter: postgresql
   database: esi_test
-  username: ubuntu
-  encoding: SQL_ASCII
+  username: postgres
+  encoding: utf8
 
 production:
   <<: *default
