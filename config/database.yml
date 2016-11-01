@@ -4,7 +4,7 @@ default: &default
   database: esi_development
   pool: 5
   username: postgres
-  password:
+  password: 1234
 
 development:
   <<: *default
