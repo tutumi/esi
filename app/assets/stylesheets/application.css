@@ -25,3 +25,11 @@
 	display: block;
 }
 
+.developer-box a, .developer-box a:visited {
+	color:#000;
+}
+
+.developer-box a:hover {
+	color:#FFF;
+}
+
