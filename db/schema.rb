@@ -10,14 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101152817) do
+ActiveRecord::Schema.define(version: 20161107193929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "courses", force: :cascade do |t|
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "nome"
+    t.integer  "codcg"
+    t.integer  "codcur"
+    t.integer  "codhab"
+    t.integer  "duracao_min"
+    t.integer  "duracao_ideal"
+    t.integer  "duracao_max"
+    t.integer  "ch_obrigatoria_aula"
+    t.integer  "ch_obrigatoria_trab"
+    t.integer  "ch_eletiva_aula"
+    t.integer  "ch_eletiva_trab"
+    t.integer  "ch_livre_aula"
+    t.integer  "ch_livre_trab"
+    t.integer  "ch_estagio"
+    t.integer  "periodo"
+    t.index ["codcg", "codcur", "codhab"], name: "index_courses_on_codcg_and_codcur_and_codhab", unique: true, using: :btree
+  end
+
+  create_table "curriculums", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "subject_id"
+    t.integer  "semestre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "tipo"
+    t.index ["course_id"], name: "index_curriculums_on_course_id", using: :btree
+    t.index ["subject_id"], name: "index_curriculums_on_subject_id", using: :btree
+  end
+
+  create_table "requisites", force: :cascade do |t|
+    t.integer  "course_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "tipo"
+    t.integer  "disciplina_id"
+    t.integer  "requisito_id"
+    t.index ["course_id"], name: "index_requisites_on_course_id", using: :btree
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "codigo"
+    t.string   "nome"
+    t.integer  "credito_aula"
+    t.integer  "credito_trab"
+    t.integer  "carga_horaria"
+    t.integer  "carga_estagio"
+    t.integer  "carga_pratica"
+    t.integer  "carga_aaca"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["codigo"], name: "index_subjects_on_codigo", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,4 +80,7 @@ ActiveRecord::Schema.define(version: 20161101152817) do
     t.string   "password_digest"
   end
 
+  add_foreign_key "curriculums", "courses"
+  add_foreign_key "curriculums", "subjects"
+  add_foreign_key "requisites", "courses"
 end
