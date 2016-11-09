@@ -2,7 +2,7 @@ require 'nokogumbo'
 require 'open-uri'
 
 class UnitScraper
-	@@units = []
+  @@units = []
 
   def self.scrap
     url = "https://uspdigital.usp.br/jupiterweb/jupColegiadoLista?tipo=D"
@@ -15,12 +15,12 @@ class UnitScraper
 
     return @@units
 
-	end
+  end
 
-	def self.parse_tds(tds)
-		(2...tds.size).step(2).each do |index|
-    	@@units.push(tds[index].text.strip)
+  def self.parse_tds(tds)
+    (2...tds.size).step(2).each do |index|
+      @@units.push(tds[index].text.strip)
     end
-	end
+  end
 
 end

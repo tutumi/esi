@@ -26,7 +26,7 @@ class JupiterCrawler
       begin
         course.merge!(CourseScraper.course_info(page))
         course[:disciplinas] = SubjectScraper.scrap(page)
-      rescue => error
+      rescue # => error
         #puts $!
         #puts $!.backtrace
         puts jupiterurl
@@ -50,47 +50,58 @@ class JupiterCrawler
     ActiveRecord::Base.transaction do
       courses.each do |course|
         puts "Adicionando #{course['curso']} (#{course['periodo']})..."
-        _course = Course.create(nome: course["curso"],
-                                codcg: course["codcg"],
-                                codcur: course["codcur"],
-                                codhab: course["codhab"],
-                                duracao_min: course["duracao"]["min"],
-                                duracao_ideal: course["duracao"]["ideal"],
-                                duracao_max: course["duracao"]["max"],
-                                ch_obrigatoria_aula: course["carga_horaria"]["obrigatoria"]["aula"],
-                                ch_obrigatoria_trab: course["carga_horaria"]["obrigatoria"]["trabalho"],
-                                ch_eletiva_aula: course["carga_horaria"]["optativa_livre"]["aula"],
-                                ch_eletiva_trab: course["carga_horaria"]["optativa_livre"]["trabalho"],
-                                ch_livre_aula: course["carga_horaria"]["optativa_eletiva"]["aula"],
-                                ch_livre_trab: course["carga_horaria"]["optativa_eletiva"]["trabalho"],
-                                ch_estagio: course["carga_horaria"]["estagio"],
-                                periodo: course["periodo"])
-
+        curso = self.novo_curso(course)
         puts 'Adicionando disciplinas do curso...'
         course["disciplinas"].each do |semestre, disciplinas|
           disciplinas.each do |disciplina|
-            _disciplina = Subject.create_with(nome: disciplina["nome"],
-                                              credito_aula: disciplina["credito_aula"],
-                                              credito_trab: disciplina["credito_trab"],
-                                              carga_horaria: disciplina["carga_horaria"],
-                                              carga_estagio: disciplina["carga_estagio"],
-                                              carga_pratica: disciplina["carga_pratica"],
-                                              carga_aaca: disciplina["carga_aaca"])
-                                  .find_or_create_by(codigo: disciplina["codigo"])
-
-            _curriculum = Curriculum.create(course: _course, subject: _disciplina, semestre: semestre.to_i, tipo: disciplina["tipo"])
-
-            disciplina["requisitos"].each do |tipo, requisitos|
-              requisitos.each do |requisito|
-                _requisito = Requisite.create(disciplina: _disciplina, 
-                                              requisito: Subject.where(codigo: requisito).first, 
-                                              tipo: tipo, 
-                                              course: _course)
-              end
-            end
+            disciplina_obj = self.adiciona_disciplina(disciplina)
+            Curriculum.create(course: curso, subject: disciplina_obj, semestre: semestre.to_i, tipo: disciplina["tipo"])
+            self.adiciona_requisitos(disciplina["requisitos"], disciplina_obj, curso)
           end
         end
       end
     end
   end
+
+  def self.novo_curso(course)
+    return Course.create(nome: course["curso"],
+                         codcg: course["codcg"],
+                         codcur: course["codcur"],
+                         codhab: course["codhab"],
+                         duracao_min: course["duracao"]["min"],
+                         duracao_ideal: course["duracao"]["ideal"],
+                         duracao_max: course["duracao"]["max"],
+                         ch_obrigatoria_aula: course["carga_horaria"]["obrigatoria"]["aula"],
+                         ch_obrigatoria_trab: course["carga_horaria"]["obrigatoria"]["trabalho"],
+                         ch_eletiva_aula: course["carga_horaria"]["optativa_livre"]["aula"],
+                         ch_eletiva_trab: course["carga_horaria"]["optativa_livre"]["trabalho"],
+                         ch_livre_aula: course["carga_horaria"]["optativa_eletiva"]["aula"],
+                         ch_livre_trab: course["carga_horaria"]["optativa_eletiva"]["trabalho"],
+                         ch_estagio: course["carga_horaria"]["estagio"],
+                         periodo: course["periodo"])
+
+  end
+
+  def self.adiciona_requisitos(reqs, disciplina, curso)
+    reqs.each do |tipo, requisitos|
+      requisitos.each do |requisito|
+        Requisite.create(disciplina: disciplina, 
+                         requisito: Subject.where(codigo: requisito).first, 
+                         tipo: tipo, 
+                         course: curso)
+      end
+    end
+  end
+
+  def self.adiciona_disciplina(disciplina)
+    return Subject.create_with(nome: disciplina["nome"],
+                               credito_aula: disciplina["credito_aula"],
+                               credito_trab: disciplina["credito_trab"],
+                               carga_horaria: disciplina["carga_horaria"],
+                               carga_estagio: disciplina["carga_estagio"],
+                               carga_pratica: disciplina["carga_pratica"],
+                               carga_aaca: disciplina["carga_aaca"])
+                  .find_or_create_by(codigo: disciplina["codigo"])
+  end
+
 end
