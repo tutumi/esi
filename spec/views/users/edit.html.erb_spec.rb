@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "users/edit", type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
-      :name => "MyString",
-      :email => "caio@teixeira.com.br",
-      :nusp => "MyNUSP",
+      :name => "Ana Carolina Trino de Carvalho",
+      :email => "ana.trino.carvalho@usp.br",
+      :nusp => "8641897",
       :password => "teste123"
     ))
   end
