@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "static_pages/index.html.erb", type: :view do
-   it "renders links" do
+  it "renders links" do
     render
     assert_select "a", :href => root_path
     assert_select "a", :href => about_path
