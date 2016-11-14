@@ -20,19 +20,6 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #FFF;
-
-  &:visited {
-    color: #FFF;
-  }
-
-  &:hover {
-    color: #FFF;
-    background-color: #000;
-  }
-}
-
 th {
   padding-bottom: 5px;
 }
@@ -55,8 +42,7 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
-  display: table;
+  color: red;
 }
 
 #error_explanation {
@@ -80,7 +66,6 @@ div {
 
   ul li {
     font-size: 12px;
-    list-style: square;
   }
 }
 
