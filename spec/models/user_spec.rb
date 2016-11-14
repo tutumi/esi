@@ -4,11 +4,9 @@ require 'spec_helper'
 RSpec.describe User, type: :model do
     #pending "add some examples to (or delete) #{__FILE__}"
     it "should destroy the user" do
-      #@user = User.create(name: "Michel Inacio Roussef", email: "email@liame.com", nusp: "8516666")
-      #@user.destroy(name: "Michel Inacio Roussef", email: "email@liame.com", nusp: "8516666")
-      #@user.destroy
-      #@user.delete
-      #expect(@user).not_to be_valid
+      @user = User.create(name: "Michel Inacio Roussef", email: "email@liame.com", nusp: "8516142", password:"1234567")
+      @user.delete
+      expect { User.find(@user.id) }.to raise_exception(ActiveRecord::RecordNotFound)
     end
 end
 
