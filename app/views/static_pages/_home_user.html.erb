@@ -42,8 +42,14 @@
                 <div class="subjects_wrapper">
                 <% for i in 1..course.duracao_ideal %>
                     <div class="semester">
-                    <% Curriculum.where('course_id = ? AND tipo = ? and semestre = ?', current_user.courses_id, 0, i).each do |curr|  %>
-                        <div class="subject"><%= Subject.find(curr.subject_id).codigo  %></div>
+                        <div class="semester_title"><%= i %> Semestre</div>
+                    <% Curriculum.where('course_id = ? and semestre = ?', current_user.courses_id,  i).order(:tipo).each do |curr|  %>
+                        <% subject = Subject.find(curr.subject_id) %>
+                        <% if curr.tipo == "obrigatoria" %>
+                            <div class="subject mandatory"><%= subject.codigo  %></div>
+                        <% else %>
+                            <div class="subject optional"><%= subject.codigo  %></div>
+                        <% end %>
                     <% end %>
                     </div>
                 <% end %>

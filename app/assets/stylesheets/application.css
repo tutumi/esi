@@ -45,7 +45,10 @@
 .classes_wrapper h4{border-bottom: #EAEAEA 2px solid; width:200px; margin: 0 auto; padding: 5px}
 .subjects_wrapper{margin: 0 auto; width:80%;}
 .semester{float:left; width:100px;}
-.subject{width:100%; height: 50px; background-color: orange; border:#000000 1px solid;}
+.semester_title{width:100%; height: 20px; background-color: white; border:#000000 1px solid;}
+.subject{width:100%; height: 50px; border:#000000 1px solid;}
+.mandatory{background-color: orange}
+.optional{background-color: gray}
 
 .footer nav{
 	float:right; 
