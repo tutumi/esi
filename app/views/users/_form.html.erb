@@ -25,17 +25,12 @@
     
     <div class="form-group">
       <%= f.label :courses_id, "Curso" %>
-      <%= f.collection_select :courses_id, Course.order(:nome), :id, :nome, include_blank: true, :class => "form-control"%>
+      <%= f.collection_select :courses_id, Course.order(:nome), :id, :full_name, include_blank: true, :class => "form-control"%>
     </div>
     
     <div class="form-group">
       <%= f.label :startYear, "Ano de Ingresso" %>
       <%= f.text_field :startYear, :class => "form-control"%>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :password, "Senha" %>
-      <%= f.password_field :password, :class => "form-control"%>
     </div>
     
     <div class="form-group">
