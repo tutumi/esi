@@ -6,32 +6,52 @@
       <% end %>
   </div>
   <% end %>
+  
+<<<<<<< HEAD
   <div class="form-group">
-    <%= f.label :name, "Nome" %>
-    <%= f.text_field :name, :class => "form-control" %>
+    <%= f.label :courses_id, "Curso" %>
+    <%= f.collection_select :courses_id, Course.order(:nome), :id, :nome, include_blank: true, :class => "form-control"%>
   </div>
-
+  
   <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, :type => "email", :class => "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :nusp, "Número USP" %>
-    <%= f.text_field :nusp, :class => "form-control"%>
+    <%= f.label :startYear, "Ano de Ingresso" %>
+    <%= f.text_field :startYear, :class => "form-control"%>
   </div>
   
   <div class="form-group">
     <%= f.label :password, "Senha" %>
     <%= f.password_field :password, :class => "form-control"%>
   </div>
+=======
+  <div class = "col-md-5 col-centered">
+    <div class="form-group">
+      <%= f.label :name, "Nome" %>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+>>>>>>> 319b945756cd6e3e5edf4d8cd4dd934da5f82242
   
-  <div class="form-group">
-    <%= f.label :password_confirmation, "Repita a senha" %>
-    <%= f.password_field :password_confirmation, :class => "form-control" %>
-  </div>
-
-  <div class="actions center">
-    <%= f.submit :class => 'btn btn-primary', :value => "Criar usuário" %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, :type => "email", :class => "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :nusp, "Número USP" %>
+      <%= f.text_field :nusp, :class => "form-control"%>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :password, "Senha" %>
+      <%= f.password_field :password, :class => "form-control"%>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Repita a senha" %>
+      <%= f.password_field :password_confirmation, :class => "form-control" %>
+    </div>
+  
+    <div class="actions center">
+      <%= f.submit :class => 'btn btn-primary', :value => "Criar usuário" %>
+    </div>
   </div>
 <% end %>
