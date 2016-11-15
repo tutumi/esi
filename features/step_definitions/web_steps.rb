@@ -252,3 +252,16 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+
+Given(/^I have no user$/) do
+  User.delete_all  
+end
+
+
+Then(/^I should have (\d+) user$/) do |arg|
+  User.count == arg
+end
+
+
+
