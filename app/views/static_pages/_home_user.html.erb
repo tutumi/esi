@@ -1,6 +1,10 @@
+<% name = current_user.name 
+   course = Course.find(current_user.courses_id)
+%>
+
 <div class="center" id="page_wrapper">
     <section class="center home_title">
-        <h1>Bem vindo, <%= current_user.name %></h1>
+        <h1>Bem vindo, <%= name %></h1>
     </section>
     
     
@@ -20,7 +24,34 @@
         </div>
     </section>
     
-    <section class="">
+    <section class="user_course">
+        <h3 class="subtitle">Dados do Curso</h3>
+        <div class="section_content">
+            <div class="label_wrapper">
+                <div class="profile_label">Curso:</div>
+                <div class="profile_label">Ano de Ingresso:</div>
+            </div>
+            <div class="data_wrapper">
+                <div class="profile_data"><%= course.nome %></div>
+                <div class="profile_data"><%= current_user.startYear %></div>
+            </div>
+            
+            <div class="classes_wrapper">
+                <h4>Matérias</h4>
+                
+                <div class="subjects_wrapper">
+                <% for i in 1..course.duracao_ideal %>
+                    <div class="semester">
+                    <% Curriculum.where('course_id = ? AND tipo = ? and semestre = ?', current_user.courses_id, 0, i).each do |curr|  %>
+                        <div class="subject"><%= Subject.find(curr.subject_id).codigo  %></div>
+                    <% end %>
+                    </div>
+                <% end %>
+                </div>
+                
+                
+            </div>
+        </div>
     </section>
     
 </div>
