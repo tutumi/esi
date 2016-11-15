@@ -1,3 +1,6 @@
+<% if logged_in? %>
+  <%= render 'home_user'%>
+<% else %>
 <div class="center jumbotron">
   <h1>Já jubilou?</h1>
 
@@ -14,3 +17,5 @@
 
 <!--<%= link_to image_tag("rails.png", alt: "Rails logo"),
           'http://rubyonrails.org/' %>-->
+          
+<% end %>

@@ -1,0 +1,27 @@
+<div class="center" id="page_wrapper">
+    <section class="center home_title">
+        <h1>Bem vindo, <%= current_user.name %></h1>
+    </section>
+    
+    
+    <section class="user_profile">
+        <h3 class="subtitle">Perfil</h3>
+        <div class="section_content">
+            <div class="label_wrapper">
+                <div class="profile_label">Nome:</div>
+                <div class="profile_label">Email:</div>
+                <div class="profile_label">Numero USP:</div>
+            </div>
+            <div class="data_wrapper">
+                <div class="profile_data"><%= current_user.name %></div>
+                <div class="profile_data"><%= current_user.email %></div>
+                <div class="profile_data"><%= current_user.nusp %></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="">
+    </section>
+    
+</div>
+

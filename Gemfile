@@ -39,6 +39,8 @@ gem 'bcrypt',         '3.1.11'
 #scraper
 gem 'nokogumbo'
 
+#factory girl
+gem 'factory_girl'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +52,7 @@ group :development, :test do
   # assigns has been extracted to a gem. To continue using it,
   # add `gem 'rails-controller-testing'` to your Gemfile.
   gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
 end
 
 group :development do

@@ -10,14 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107193929) do
+ActiveRecord::Schema.define(version: 20161115001324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "course_requirements", force: :cascade do |t|
+    t.string   "course_id"
+    t.string   "course_requirement"
+    t.integer  "is_strong"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "id_course"
+    t.string   "name"
+    t.boolean  "is_mandatory"
+    t.integer  "credits"
+    t.integer  "ext_credits"
+    t.integer  "hours"
     t.string   "nome"
     t.integer  "codcg"
     t.integer  "codcur"
@@ -78,9 +92,13 @@ ActiveRecord::Schema.define(version: 20161107193929) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.integer  "startYear"
+    t.integer  "courses_id"
+    t.index ["courses_id"], name: "index_users_on_courses_id", using: :btree
   end
 
   add_foreign_key "curriculums", "courses"
   add_foreign_key "curriculums", "subjects"
   add_foreign_key "requisites", "courses"
+  add_foreign_key "users", "courses", column: "courses_id"
 end
