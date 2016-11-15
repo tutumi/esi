@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){initialize()});
+
+function initialize(){
+    $(".subject").on("mouseover", onSubjectMouseOver);
+    $(".subject").on("mouseout", onSubjectMouseOut);
+}
+
+function onSubjectMouseOver(e){
+    $(this).toggleClass("over_subject");
+}
+
+function onSubjectMouseOut(e){
+    $(this).toggleClass("over_subject");
+}
