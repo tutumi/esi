@@ -1,5 +1,5 @@
 class CreateCurriculums < ActiveRecord::Migration[5.0]
-  def change
+  def self.up
     create_table :curriculums do |t|
       t.references :course, foreign_key: true
       t.references :subject, foreign_key: true
@@ -7,5 +7,9 @@ class CreateCurriculums < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+  end
+
+  def self.down
+    drop_table :curriculums 
   end
 end

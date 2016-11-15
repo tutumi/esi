@@ -1,5 +1,8 @@
 class AddColumnToCurriculum < ActiveRecord::Migration[5.0]
-  def change
+  def self.up
     add_column :curriculums, :tipo, :integer
+  end
+  def self.down
+    remove_column :curriculums, :tipo, :integer
   end
 end

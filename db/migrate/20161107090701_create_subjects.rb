@@ -1,5 +1,5 @@
 class CreateSubjects < ActiveRecord::Migration[5.0]
-  def change
+  def self.up
     create_table :subjects do |t|
       t.string :codigo
       t.string :nome
@@ -12,5 +12,8 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+  end
+  def self.down
+    drop_table :subjects 
   end
 end

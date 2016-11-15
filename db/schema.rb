@@ -26,12 +26,6 @@ ActiveRecord::Schema.define(version: 20161115001324) do
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "id_course"
-    t.string   "name"
-    t.boolean  "is_mandatory"
-    t.integer  "credits"
-    t.integer  "ext_credits"
-    t.integer  "hours"
     t.string   "nome"
     t.integer  "codcg"
     t.integer  "codcur"
@@ -47,6 +41,12 @@ ActiveRecord::Schema.define(version: 20161115001324) do
     t.integer  "ch_livre_trab"
     t.integer  "ch_estagio"
     t.integer  "periodo"
+    t.string   "id_course"
+    t.string   "name"
+    t.boolean  "is_mandatory"
+    t.integer  "credits"
+    t.integer  "ext_credits"
+    t.integer  "hours"
     t.index ["codcg", "codcur", "codhab"], name: "index_courses_on_codcg_and_codcur_and_codhab", unique: true, using: :btree
   end
 
