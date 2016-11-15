@@ -24,7 +24,7 @@
 .DS_Store
 
 #Ignorando o database yml pra não dar erro no travis
-/config/database.yml
+config/database.yml
 
 #ignorando a pasta do nokogumbo
 /nokogumbo
