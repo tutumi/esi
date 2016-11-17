@@ -1,0 +1,67 @@
+RSpec
+
+describe Person do
+  describe "#full_name" do
+    it "returns the first and last names concatenated" do
+    	@person = Person.new(first_name: "Rodrigo",last_name: "Guerra")
+    	expect(@person).to be_valid
+    end
+  end
+end
+
+
+Capybara
+
+
+
+
+Cucumber (.feature Files)
+
+Feature:
+ In order ...
+ As a ...
+ I want ...
+ 
+ Scenario: 
+   Given
+   When 
+   Then
+   And 
+
+
+
+Feature: Manage Articles
+ In order to make a blog
+ As a author
+ I want to create and manage articles
+
+ 
+ Scenario: Articles List
+   Given I have articles title Pizza, Breadsticks
+   When I go to the list of articles
+   Then I should see "Pizza"
+   And I should see "Pizza"
+
+ Scenario: Create Valid Article
+    Given I have no articles
+    And I am on the list of articles
+    When I follow "New Article"
+    And I fill in "Title" with "Spuds"
+    And I fill in "Content" with "Delicious potato wedges!"
+    And I press "Create"
+    Then I should see "New article created."
+    And I should see "Spuds"
+    And I should see "Delicious potato wedges!"
+  And I should have 1 article
+
+
+Run Cucumber
+
+$ cucumber features (-n)
+
+Define Stepes in step_definition
+
+
+
+
+WebRat -> Some Cucumber Steps to begin work
