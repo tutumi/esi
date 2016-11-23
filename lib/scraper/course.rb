@@ -25,7 +25,7 @@ class CourseScraper
     end
 
     return courses
-	end
+  end
 
   def self.course_info(page)
     curso = {}
