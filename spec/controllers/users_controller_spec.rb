@@ -24,12 +24,16 @@ RSpec.describe UsersController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
+  let (:course) {
+    Course.create()
+  }
+
   let(:valid_attributes) {
    #skip("Add a hash of attributes valid for your model")
-   {'name' => 'Adriano', 'email' => 'adriano@email.com', 'nusp' => '0000001', 'password' => 'password123'}
-   {'name' => 'Caio', 'email' => 'caio@email.com', 'nusp' => '0000002', 'password' => '123456'}
-   {'name' => 'Ana Trino', 'email' => 'anatrino@email.com', 'nusp' => '0000003', 'password' => 'password123*'}
-   {'name' => 'Bruno Murozaki', 'email' => 'brunomurozaki@email.com.br', 'nusp' => '0000004', 'password' => 'password'}
+   {'name' => 'Adriano', 'email' => 'adriano@email.com', 'nusp' => '0000001', 'password' => 'password123', 'course_id' => course.id}
+   {'name' => 'Caio', 'email' => 'caio@email.com', 'nusp' => '0000002', 'password' => '123456', 'course_id' => course.id}
+   {'name' => 'Ana Trino', 'email' => 'anatrino@email.com', 'nusp' => '0000003', 'password' => 'password123*', 'course_id' => course.id}
+   {'name' => 'Bruno Murozaki', 'email' => 'brunomurozaki@email.com.br', 'nusp' => '0000004', 'password' => 'password', 'course_id' => course.id}
   }
 
   let(:invalid_attributes) {
@@ -116,7 +120,7 @@ RSpec.describe UsersController, type: :controller do
     context "with valid params" do
       let(:new_attributes) {
         #skip("Add a hash of attributes valid for your model")
-        {'name' => 'Ana', 'email' => 'ana@email.com', 'nusp' => '1000001', 'password' => 'password123'}
+        {'name' => 'Ana', 'email' => 'ana@email.com', 'nusp' => '1000001', 'password' => 'password123', 'course' => Course.create()}
       }
 
       it "updates the requested user" do

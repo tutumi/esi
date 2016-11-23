@@ -6,7 +6,8 @@ RSpec.describe "users/show", type: :view do
       :name => "Name",
       :email => "each@usp.br",
       :nusp => "9999999",
-      :password => "teste123"
+      :password => "teste123",
+      :course => Course.create()
     ))
   end
 

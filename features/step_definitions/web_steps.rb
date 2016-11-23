@@ -258,9 +258,13 @@ Given(/^I have no user$/) do
   User.delete_all  
 end
 
-
 Then(/^I should have (\d+) user$/) do |arg|
   User.count == arg
+end
+
+Given(/^I have some course$/) do
+  Course.delete_all
+  Course.create(nome: 'SI', periodo: 'noturno')
 end
 
 

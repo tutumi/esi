@@ -1,4 +1,6 @@
 class Subject < ApplicationRecord
+  attr_accessor :tipo
+
   has_many :curriculums
   has_many :courses, through: :curriculums
 
