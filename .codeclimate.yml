@@ -1,6 +1,9 @@
 engines:
   rubocop:
     enabled: true
+    checks:
+      Rubocop/Lint/Debugger:
+        enabled: false
 ratings:
   paths:
   - "**.rb"

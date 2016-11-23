@@ -30,16 +30,16 @@ RSpec.describe UsersController, type: :controller do
 
   let(:valid_attributes) {
    #skip("Add a hash of attributes valid for your model")
-   {'name' => 'Adriano', 'email' => 'adriano@email.com', 'nusp' => '0000001', 'password' => 'password123', 'course_id' => course.id}
-   {'name' => 'Caio', 'email' => 'caio@email.com', 'nusp' => '0000002', 'password' => '123456', 'course_id' => course.id}
-   {'name' => 'Ana Trino', 'email' => 'anatrino@email.com', 'nusp' => '0000003', 'password' => 'password123*', 'course_id' => course.id}
+   #{'name' => 'Adriano', 'email' => 'adriano@email.com', 'nusp' => '0000001', 'password' => 'password123', 'course_id' => course.id}
+   #{'name' => 'Caio', 'email' => 'caio@email.com', 'nusp' => '0000002', 'password' => '123456', 'course_id' => course.id}
+   #{'name' => 'Ana Trino', 'email' => 'anatrino@email.com', 'nusp' => '0000003', 'password' => 'password123*', 'course_id' => course.id}
    {'name' => 'Bruno Murozaki', 'email' => 'brunomurozaki@email.com.br', 'nusp' => '0000004', 'password' => 'password', 'course_id' => course.id}
   }
 
   let(:invalid_attributes) {
     #skip("Add a hash of attributes invalid for your model")
-    {'name' => '123', 'email' => 'email.com', 'nusp' => 'NumUSP', 'password' => '123'}  
-    {'name' => ' ', 'email' => 'email', 'nusp' => 'N0001', 'password' => ''}
+    #{'name' => '123', 'email' => 'email.com', 'nusp' => 'NumUSP', 'password' => '123'}  
+    #{'name' => ' ', 'email' => 'email', 'nusp' => 'N0001', 'password' => ''}
     {'name' => 'Ana Trino', 'email' => 'anatrinoemail.com', 'nusp' => '0000v03', 'password' => '*'}
   }
 
