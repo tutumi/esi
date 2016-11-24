@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   database: esi_development
   pool: 5
-  username: postgres
+  username: ubuntu
   password: 
 
 development:
@@ -13,7 +13,7 @@ development:
 test: &test
   adapter: postgresql
   database: esi_test
-  username: postgres
+  username: ubuntu
   encoding: utf8
 
 production:
