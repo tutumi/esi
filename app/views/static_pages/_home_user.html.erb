@@ -1,3 +1,6 @@
+<%= javascript_tag do %>
+    window.requisitos = <%= raw pre_requisitos.to_json %>
+<% end %>
 <div class="center" id="page_wrapper">
     <section class="center home_title">
         <h1>Bem vindo, <%= current_user.name  %></h1>
@@ -44,7 +47,7 @@
                     <div class="semester">
                         <div class="semester_title"><%= semestre %> Semestre</div>
                     <%  disciplinas.each do |subject|  %>
-                        <div class="subject <%= subject.tipo %>"><%= subject.codigo  %></div>
+                        <div class="subject <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
                     <% end %>
                     </div>
                 <% end %>
@@ -62,6 +65,10 @@
                     <span class="sub_line">
                         <div class="sub_color optional"></div>
                         <div class="sub_text">Optativa Eletiva não Cursadas</div>
+                    </span>
+                    <span class="sub_line">
+                        <div class="sub_color requisite"></div>
+                        <div class="sub_text">Requisitos</div>
                     </span>
                 </div>
             </div>

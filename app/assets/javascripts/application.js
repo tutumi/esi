@@ -25,8 +25,14 @@ function initialize(){
 
 function onSubjectMouseOver(e){
     $(this).toggleClass("over_subject");
+    if (requisitos[$(this).data("code")]) {
+        requisitos[$(this).data("code")].forEach(function(req) {
+            $("[data-code="+req+"]").addClass("requisite");
+        });
+    }
 }
 
 function onSubjectMouseOut(e){
     $(this).toggleClass("over_subject");
+    $(".subject").removeClass("requisite");
 }

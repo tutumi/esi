@@ -50,6 +50,7 @@
 .mandatory{background-color: orange}
 .optional{background-color: gray}
 .attended{background-color: green}
+.requisite{background-color: #CC1818}
 
 .over_subject{font-weight: bold}
 
