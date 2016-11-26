@@ -45,6 +45,9 @@ function onCickCVButton(e){
 }
 
 function onClickSaveButton(e){
+    var coursedSubjects = 0;
+    var data = [];
+    
     $(".subject").off("mouseover");
     $(".subject").off("mouseout");
     $(".subject").off("click", onClickSubject);
@@ -54,7 +57,20 @@ function onClickSaveButton(e){
     $(this).css("display", "none");
     $("#editCVButton").css("display", "inline-block");
     $(".selectSubjectsHelp").css("display", "none");
+
     
+
+    coursedSubjects = $(".coursed");
+    
+    for(var i = 0; i < coursedSubjects.length; i++){
+        data.push(
+            {
+                user_id:window.userId,
+                course:$(coursedSubjects[i]).attr("data-code")
+            });
+    }
+    
+    sendMessage(data);
 }
 
 function onSubjectMouseOut(e){
@@ -64,4 +80,16 @@ function onSubjectMouseOut(e){
 
 function onClickSubject(e){
     $(this).toggleClass("coursed");
+}
+
+function sendMessage(data){
+    
+    $.ajax({
+        url:"/add_curriculum",
+        type:"POST",
+        data:{
+            data: data
+        }
+    });
+    
 }

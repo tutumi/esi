@@ -1,5 +1,6 @@
 <%= javascript_tag do %>
     window.requisitos = <%= raw pre_requisitos.to_json %>
+    window.userId = <%= current_user.id %>
 <% end %>
 <div class="center" id="page_wrapper">
     <section class="center home_title">
@@ -52,7 +53,11 @@
                         <div class="semester">
                             <div class="semester_title"><%= semestre %> Semestre</div>
                         <%  disciplinas.each do |subject|  %>
-                            <div class="subject_inactive <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
+                            <% if isCoursed(subject) %>
+                                <div class="subject_inactive coursed <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
+                            <% else %>
+                                <div class="subject_inactive <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
+                            <% end %>
                         <% end %>
                         </div>
                     <% end %>

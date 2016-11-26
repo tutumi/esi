@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  helper_method :grade_curricular, :pre_requisitos
+  helper_method :grade_curricular, :pre_requisitos, :isCoursed
   
   def index
   end
@@ -8,6 +8,16 @@ class StaticPagesController < ApplicationController
   end
   
   def contact
+  end
+
+  def isCoursed(subject)
+    
+    cv = Curriculum.where(course: current_user.course, subject: subject)
+    if UserHasCurriculum.exists?(:user => current_user, :curriculum => cv)
+      return true
+    end
+    return false
+    
   end
 
   def grade_curricular
