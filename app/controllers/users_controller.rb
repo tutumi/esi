@@ -20,6 +20,13 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
+  
+  # GET/users/1/add_curriculum
+  def add_curriculum
+    
+    debug(user_params)
+    
+  end
 
   # POST /users
   # POST /users.json
@@ -69,6 +76,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :nusp, :password, :startYear, :courses_id, :password_confirmation)
+      params.require(:user).permit(:name, :email, :nusp, :password, :startYear, :course_id, :password_confirmation)
     end
 end

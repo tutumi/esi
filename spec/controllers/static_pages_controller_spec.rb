@@ -9,14 +9,14 @@ RSpec.describe StaticPagesController, type: :controller do
     end
   end
   
-   describe "GET #about" do
+  describe "GET #about" do
     it "returns http success for about page" do
       get :index
       expect(response).to have_http_status(:success)
     end
   end
   
-   describe "GET #contact" do
+  describe "GET #contact" do
     it "returns http success for about contact" do
       get :index
       expect(response).to have_http_status(:success)

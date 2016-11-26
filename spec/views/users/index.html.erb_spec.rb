@@ -7,13 +7,15 @@ RSpec.describe "users/index", type: :view do
         :name => "Name",
         :email => "name@usp.br",
         :nusp => "1111111",
-        :password => "teste123"
+        :password => "teste123",
+        :course => Course.create()
       ),
       User.create!(
         :name => "Name",
         :email => "name@usp.br",
         :nusp => "1111111",
-        :password => "teste123"
+        :password => "teste123",
+        :course => Course.create()
       )
     ])
   end

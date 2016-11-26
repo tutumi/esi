@@ -5,7 +5,8 @@ RSpec.describe "users/new", type: :view do
     assign(:user, User.new(
       :name => "MyString",
       :email => "caio@teixeira.com",
-      :nusp => "MyString"
+      :nusp => "MyString",
+      :course => Course.create()
     ))
   end
 
@@ -16,7 +17,7 @@ RSpec.describe "users/new", type: :view do
       assert_select "input#user_name[name=?]", "user[name]"
       assert_select "input#user_email[name=?]", "user[email]"
       assert_select "input#user_nusp[name=?]", "user[nusp]"
-      assert_select "select#user_courses_id[name=?]", "user[courses_id]"
+      assert_select "select#user_course_id[name=?]", "user[course_id]"
       assert_select "input#user_startYear[name=?]", "user[startYear]"
       assert_select "input#user_password[name=?]", "user[password]"
       assert_select "input#user_password_confirmation[name=?]", "user[password_confirmation]"

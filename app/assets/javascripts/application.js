@@ -14,3 +14,82 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){initialize()});
+
+function initialize(){
+    $("#editCVButton").on("click", onCickCVButton);
+    $("#saveButton").on("click", onClickSaveButton);
+    
+}
+
+function onSubjectMouseOver(e){
+    $(this).toggleClass("over_subject");
+    if (requisitos[$(this).data("code")]) {
+        requisitos[$(this).data("code")].forEach(function(req) {
+            $("[data-code="+req+"]").addClass("requisite");
+        });
+    }
+}
+
+function onCickCVButton(e){
+    $(".subject_inactive").removeClass("subject_inactive").addClass("subject");
+    $(".subject").on("mouseover", onSubjectMouseOver);
+    $(".subject").on("mouseout", onSubjectMouseOut);
+    $(".subject").on("click", onClickSubject);
+    
+    $(this).css("display", "none");
+    $("#saveButton").css("display", "inline-block");
+    $(".selectSubjectsHelp").css("display", "block");
+}
+
+function onClickSaveButton(e){
+    var coursedSubjects = 0;
+    var data = [];
+    
+    $(".subject").off("mouseover");
+    $(".subject").off("mouseout");
+    $(".subject").off("click", onClickSubject);
+    
+    $(".subject").removeClass("subject").addClass("subject_inactive");
+    
+    $(this).css("display", "none");
+    $("#editCVButton").css("display", "inline-block");
+    $(".selectSubjectsHelp").css("display", "none");
+
+    
+
+    coursedSubjects = $(".coursed");
+    
+    for(var i = 0; i < coursedSubjects.length; i++){
+        data.push(
+            {
+                user_id:window.userId,
+                course:$(coursedSubjects[i]).attr("data-code")
+            });
+    }
+    
+    sendMessage(data);
+}
+
+function onSubjectMouseOut(e){
+    $(this).toggleClass("over_subject");
+    $(".subject").removeClass("requisite");
+}
+
+function onClickSubject(e){
+    $(this).toggleClass("coursed");
+}
+
+function sendMessage(data){
+    
+    $.ajax({
+        url:"/add_curriculum",
+        type:"POST",
+        data:{
+            data: data
+        }
+    });
+    
+}

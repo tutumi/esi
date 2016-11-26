@@ -6,11 +6,13 @@ Feature: Create User
  
  Scenario: Create a valid user
    Given I have no user
+   And I have some course
    And I go to login page
    When I follow "Sign up now!"
    And I fill in "Nome" with "Rodrigo"
    And I fill in "Email" with "eu@rodrigoguerra.com.br"
    And I fill in "Número USP" with "8516497"
+   And I select "SI - (noturno)" from "Curso"
    And I fill in "Ano de Ingresso" with "2013"
    And I fill in "Senha" with "123456"
    And I fill in "Repita a senha" with "123456"

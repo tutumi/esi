@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(version: 20161126215820) do
     t.index ["codigo"], name: "index_subjects_on_codigo", unique: true, using: :btree
   end
 
+  create_table "user_has_curriculums", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["curriculum_id"], name: "index_user_has_curriculums_on_curriculum_id", using: :btree
+    t.index ["user_id"], name: "index_user_has_curriculums_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -92,7 +101,7 @@ ActiveRecord::Schema.define(version: 20161126215820) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "startYear"
-    t.integer  "courses_id"
+    t.integer  "course_id"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -103,12 +112,14 @@ ActiveRecord::Schema.define(version: 20161126215820) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "password_digest"
-    t.index ["courses_id"], name: "index_users_on_courses_id", using: :btree
+    t.index ["course_id"], name: "index_users_on_course_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "curriculums", "courses"
   add_foreign_key "curriculums", "subjects"
   add_foreign_key "requisites", "courses"
-  add_foreign_key "users", "courses", column: "courses_id"
+  add_foreign_key "user_has_curriculums", "curriculums"
+  add_foreign_key "user_has_curriculums", "users"
+  add_foreign_key "users", "courses"
 end
