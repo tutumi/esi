@@ -19,8 +19,9 @@
 $(function(){initialize()});
 
 function initialize(){
-    $(".subject").on("mouseover", onSubjectMouseOver);
-    $(".subject").on("mouseout", onSubjectMouseOut);
+    $("#editCVButton").on("click", onCickCVButton);
+    $("#saveButton").on("click", onClickSaveButton);
+    
 }
 
 function onSubjectMouseOver(e){
@@ -32,7 +33,35 @@ function onSubjectMouseOver(e){
     }
 }
 
+function onCickCVButton(e){
+    $(".subject_inactive").removeClass("subject_inactive").addClass("subject");
+    $(".subject").on("mouseover", onSubjectMouseOver);
+    $(".subject").on("mouseout", onSubjectMouseOut);
+    $(".subject").on("click", onClickSubject);
+    
+    $(this).css("display", "none");
+    $("#saveButton").css("display", "inline-block");
+    $(".selectSubjectsHelp").css("display", "block");
+}
+
+function onClickSaveButton(e){
+    $(".subject").off("mouseover");
+    $(".subject").off("mouseout");
+    $(".subject").off("click", onClickSubject);
+    
+    $(".subject").removeClass("subject").addClass("subject_inactive");
+    
+    $(this).css("display", "none");
+    $("#editCVButton").css("display", "inline-block");
+    $(".selectSubjectsHelp").css("display", "none");
+    
+}
+
 function onSubjectMouseOut(e){
     $(this).toggleClass("over_subject");
     $(".subject").removeClass("requisite");
+}
+
+function onClickSubject(e){
+    $(this).toggleClass("coursed");
 }

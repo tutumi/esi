@@ -37,20 +37,25 @@
             <div class="classes_wrapper">
                 <h4>
                     Matérias 
-                    <button type="button" class="btn btn-default" aria-label="Left Align" title="Editar cursos já feitos">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" title="Editar cursos já feitos" id="editCVButton">
                       <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" aria-label="Left Align" title="Editar cursos já feitos" id="saveButton">
+                      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                     </button>
                 </h4>
                 
+                <div class="selectSubjectsHelp">Selecione todas as disciplinas que você cursou</div>
+                
                 <div class="subjects_wrapper">
-                <% grade_curricular.each do |semestre, disciplinas| %>
-                    <div class="semester">
-                        <div class="semester_title"><%= semestre %> Semestre</div>
-                    <%  disciplinas.each do |subject|  %>
-                        <div class="subject <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
+                    <% grade_curricular.each do |semestre, disciplinas| %>
+                        <div class="semester">
+                            <div class="semester_title"><%= semestre %> Semestre</div>
+                        <%  disciplinas.each do |subject|  %>
+                            <div class="subject_inactive <%= subject.tipo %>" data-code="<%= subject.codigo  %>"><%= subject.codigo  %></div>
+                        <% end %>
+                        </div>
                     <% end %>
-                    </div>
-                <% end %>
                 </div>
                 
                 <div class="subtitles">
