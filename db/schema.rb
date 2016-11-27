@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126172328) do
+ActiveRecord::Schema.define(version: 20161126205734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "Curriculums_Users", id: false, force: :cascade do |t|
-    t.integer "user_id",       null: false
-    t.integer "curriculum_id", null: false
-  end
 
   create_table "course_requirements", force: :cascade do |t|
     t.string   "course_id"
@@ -31,12 +26,6 @@ ActiveRecord::Schema.define(version: 20161126172328) do
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "id_course"
-    t.string   "name"
-    t.boolean  "is_mandatory"
-    t.integer  "credits"
-    t.integer  "ext_credits"
-    t.integer  "hours"
     t.string   "nome"
     t.integer  "codcg"
     t.integer  "codcur"
@@ -64,11 +53,6 @@ ActiveRecord::Schema.define(version: 20161126172328) do
     t.integer  "tipo"
     t.index ["course_id"], name: "index_curriculums_on_course_id", using: :btree
     t.index ["subject_id"], name: "index_curriculums_on_subject_id", using: :btree
-  end
-
-  create_table "curriculums_users", id: false, force: :cascade do |t|
-    t.integer "user_id",       null: false
-    t.integer "curriculum_id", null: false
   end
 
   create_table "requisites", force: :cascade do |t|

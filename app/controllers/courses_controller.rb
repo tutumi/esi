@@ -69,6 +69,7 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.fetch(:course, {})
+      params.require(:course).permit(:nome,:codcg,:codcur,:codhab,:duracao_min,:duracao_ideal,:duracao_max,:ch_obrigatoria_aula,:ch_obrigatoria_trab,:ch_eletiva_aula,:ch_eletiva_trab,:ch_livre_aula,:ch_livre_trab,:ch_estagio,:periodo
+)
     end
 end
