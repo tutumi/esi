@@ -15,10 +15,12 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    
   end
 
   # GET /users/1/edit
   def edit
+    
   end
   
   # GET/users/1/add_curriculum
@@ -35,8 +37,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.html { redirect_to :root, notice: 'Usuário criado! Agora é só logar no sistema!' }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -49,13 +50,14 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to :root, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # DELETE /users/1
