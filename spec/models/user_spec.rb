@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
 end
 
 #describe "adding or delleting test" do
- 
+#Testando GIT HUB
 #end
 
 describe "validation tests" do
