@@ -9,7 +9,10 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # Create an error message.
-      render 'new'
+        if params[:session][:email] || params[:session][:password]
+          flash.now[:notice] = "Email ou senha inválidos."
+        end
+        render :new
     end
   end
   

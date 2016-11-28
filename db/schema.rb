@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 20161126205734) do
     t.index ["subject_id"], name: "index_curriculums_on_subject_id", using: :btree
   end
 
+  create_table "curriculums_users", id: false, force: :cascade do |t|
+    t.integer "user_id",       null: false
+    t.integer "curriculum_id", null: false
+  end
+
   create_table "requisites", force: :cascade do |t|
     t.integer  "course_id"
     t.datetime "created_at",    null: false
