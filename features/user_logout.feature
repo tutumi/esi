@@ -6,4 +6,4 @@ Scenario: User logout
   Given I am logged in
   When I go to the logout page
   And I press "logout"
-  Then I should be redirect_to root_path
+  Then I should see "Logged out"
