@@ -3,3 +3,12 @@
 #  User.create('name' => 'Sergio Tutumi', 'email' => 'sergio@tutumi.com.br', 'nusp' => '123456', 'password' => 'senha123', 'course' => curso)
 #  User.destroy
 #end
+
+
+Given (/^I am logged in$/) do
+  visit("/login")
+  fill_in("Email", :with => "sergio@tutumi.com.br")
+  fill_in("Password", :with => "senha123")
+  click_button("Log in")
+end
+
