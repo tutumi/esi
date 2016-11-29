@@ -40,4 +40,8 @@ class StaticPagesController < ApplicationController
     end
     @pre_requisitos
   end
+
+  def answers
+
+  end
 end
