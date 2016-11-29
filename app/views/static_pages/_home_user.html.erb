@@ -3,12 +3,17 @@
     window.userId = <%= current_user.id %>
 <% end %>
 <div class="center" id="page_wrapper">
+    <p id="notice"><%= notice %></p>
     <section class="center home_title">
         <h1>Bem vindo, <%= current_user.name  %></h1>
     </section>
     
     <section class="user_profile">
-        <h3 class="subtitle">Perfil</h3>
+        <h3 class="subtitle">Perfil
+        
+        <%= link_to "", { controller: "users", action: "edit", id: current_user.id }, class: "btn btn-default glyphicon glyphicon-pencil" %>
+        
+        </h3>
         <div class="section_content">
             <div class="label_wrapper">
                 <div class="profile_label">Nome:</div>

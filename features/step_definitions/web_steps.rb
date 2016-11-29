@@ -249,11 +249,6 @@ Then(/^(?:|I )should have the following query string:$/) do |expected_pairs|
   end
 end
 
-Then(/^show me the page$/) do
-  save_and_open_page
-end
-
-
 Given(/^I have no user$/) do
   User.delete_all  
 end
@@ -264,7 +259,7 @@ end
 
 Given(/^I have some course$/) do
   Course.delete_all
-  Course.create(nome: 'SI', periodo: 'noturno')
+  Course.create({'nome' => 'SI', 'codcg' => 9999, 'codcur' => 999999, 'codhab' => 999, 'duracao_min' => 8, 'duracao_ideal' => 8, 'duracao_max' => 12, 'ch_obrigatoria_aula' => 1830, 'ch_obrigatoria_trab' => 720, 'ch_eletiva_aula' => 240, 'ch_eletiva_trab' => 0, 'ch_livre_aula' => 750, 'ch_livre_trab' => 0, 'ch_estagio' => 480, 'periodo' => 'noturno'})
 end
 
 

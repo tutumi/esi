@@ -24,11 +24,13 @@ RSpec.describe CoursesController, type: :controller do
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    #skip("Add a hash of attributes valid for your model")
+    {'nome' => 'Bacharelado em Educação Física e Saúde', 'codcg' => 9999, 'codcur' => 999999, 'codhab' => 999, 'duracao_min' => 8, 'duracao_ideal' => 8, 'duracao_max' => 12, 'ch_obrigatoria_aula' => 1830, 'ch_obrigatoria_trab' => 720, 'ch_eletiva_aula' => 240, 'ch_eletiva_trab' => 0, 'ch_livre_aula' => 750, 'ch_livre_trab' => 0, 'ch_estagio' => 480, 'periodo' => 'vespertino'}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {'nome' => 'Bacharelado em Educ!@ção Física e Saúde', 'codcg' => 888888888, 'codcur' => 888888888, 'codhab' => 888888888, 'duracao_min' => 8, 'duracao_ideal' => 8, 'duracao_max' => 12, 'ch_obrigatoria_aula' => 1830, 'ch_obrigatoria_trab' => 720, 'ch_eletiva_aula' => 240, 'ch_eletiva_trab' => 0, 'ch_livre_aula' => 750, 'ch_livre_trab' => 0, 'ch_estagio' => 480, 'periodo' => 'vespertino'}
+    
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +105,15 @@ RSpec.describe CoursesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {'nome' => 'Bacharelado em Sistemas de Informacao', 'periodo' => 'noturno'}
       }
 
       it "updates the requested course" do
         course = Course.create! valid_attributes
         put :update, params: {id: course.to_param, course: new_attributes}, session: valid_session
         course.reload
-        skip("Add assertions for updated state")
+        expect(course.nome).to eq("Bacharelado em Sistemas de Informacao")
+        expect(course.periodo).to eq("noturno")
       end
 
       it "assigns the requested course as @course" do

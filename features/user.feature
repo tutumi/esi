@@ -16,8 +16,6 @@ Feature: Create User
    And I fill in "Ano de Ingresso" with "2013"
    And I fill in "Senha" with "123456"
    And I fill in "Repita a senha" with "123456"
-   And I press "Criar usuário"
-   Then I should see "User was successfully created."
-   And I should see "Rodrigo"
-   And I should see "eu@rodrigoguerra.com.br"
+   And I press "Criar Usuário"
+   Then I should see "Usuário criado! Agora é só logar no sistema!"
    And I should have 1 user

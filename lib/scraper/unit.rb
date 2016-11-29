@@ -1,26 +1,31 @@
 require 'nokogumbo'
 require 'open-uri'
 
-class UnitScraper
-  @@units = []
+module UnitScraper
+  @@page = nil
+  
+  def self.get_page
+    return @@page if @@page
+    @@page = Nokogiri.HTML5(open("https://uspdigital.usp.br/jupiterweb/jupColegiadoLista?tipo=D")) 
+  end
 
   def self.scrap
-    url = "https://uspdigital.usp.br/jupiterweb/jupColegiadoLista?tipo=D"
+    self.parse_tds(tds_units + tds_others)
+  end
 
-    page = Nokogiri.HTML5(open(url)) 
+  def self.tds_units
+    self.get_page.css('table')[2].css('td')
+  end
 
-    self.parse_tds(page.css('table')[2].css('td'))
-
-    self.parse_tds(page.css('table')[4].css('td'))
-
-    return @@units
-
+  def self.tds_others
+    self.get_page.css('table')[4].css('td')
   end
 
   def self.parse_tds(tds)
+    units = []
     (2...tds.size).step(2).each do |index|
-      @@units.push(tds[index].text.strip)
+      units.push(tds[index].text.strip)
     end
+    units
   end
-
 end
