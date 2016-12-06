@@ -1,6 +1,6 @@
 # Engenharia de Sistemas de Informação I
 
-[![Build Status](https://travis-ci.org/tutumi/esi.svg?branch=master)](https://travis-ci.org/stutumi/esi?branch=master)
+[![Build Status](https://travis-ci.org/tutumi/esi.svg?branch=master)](https://travis-ci.org/tutumi/esi?branch=master)
 [![Code Climate](https://codeclimate.com/github/stutumi/esi/badges/gpa.svg)](https://codeclimate.com/github/stutumi/esi)
 [![Issue Count](https://codeclimate.com/github/stutumi/esi/badges/issue_count.svg)](https://codeclimate.com/github/stutumi/esi)
 
