@@ -5,7 +5,7 @@
 #end
 
 
-Given (/^I am logged in$/) do
+Given(/^I am logged in$/) do
   visit("/login")
   fill_in("Email", :with => "sergio@tutumi.com.br")
   fill_in("Password", :with => "senha123")
